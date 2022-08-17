@@ -69,6 +69,12 @@
       if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
         dy = -dy;
       }
+      
+      if (rightPressed) {
+        paddleX = Math.min(paddleX + 7, canvas.width - paddleWidth);
+      } else if (leftPressed) {
+        paddleX = Math.max(paddleX - 7, 0);
+      }
     }
 
     document.addEventListener("keydown", keyDownHandler, false);
